@@ -1,0 +1,130 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+
+:root {
+  /* Bright neon dApp palette for argumentative */
+  --background: #071029; /* deep navy */
+  --foreground: #e6eef8; /* soft light */
+  --card: #0f1724; /* card surface */
+  --card-foreground: #e6eef8;
+  --popover: #0f1724;
+  --popover-foreground: #e6eef8;
+  --primary: #7c3aed; /* violet */
+  --primary-foreground: #ffffff;
+  --secondary: #ec4899; /* pink */
+  --secondary-foreground: #ffffff;
+  --muted: #9fb0c8;
+  --muted-foreground: #a8bed4;
+  --accent: #06b6d4; /* cyan */
+  --accent-foreground: #042028;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #112033;
+  --input: #062033;
+  --ring: #7c3aed;
+  --chart-1: #7c3aed; /* violet */
+  --chart-2: #06b6d4; /* cyan */
+  --chart-3: #f59e0b; /* gold */
+  --chart-4: #ec4899; /* pink */
+  --chart-5: #06b6d4; /* cyan */
+  --radius: 1rem;
+  --sidebar: #081322;
+  --sidebar-foreground: #e6eef8;
+  --sidebar-primary: #7c3aed;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #06b6d4;
+  --sidebar-accent-foreground: #042028;
+  --sidebar-border: #112033;
+  --sidebar-ring: #7c3aed;
+}
+
+.dark {
+  /* Same as root for consistent dark theme */
+  --background: oklch(0.08 0.02 270);
+  --foreground: oklch(0.98 0.01 270);
+  --card: oklch(0.12 0.03 270);
+  --card-foreground: oklch(0.95 0.01 270);
+  --popover: oklch(0.12 0.03 270);
+  --popover-foreground: oklch(0.95 0.01 270);
+  --primary: oklch(0.65 0.25 285);
+  --primary-foreground: oklch(0.98 0.01 270);
+  --secondary: oklch(0.18 0.04 270);
+  --secondary-foreground: oklch(0.85 0.02 270);
+  --muted: oklch(0.15 0.03 270);
+  --muted-foreground: oklch(0.65 0.02 270);
+  --accent: oklch(0.55 0.22 160);
+  --accent-foreground: oklch(0.98 0.01 270);
+  --destructive: oklch(0.55 0.25 15);
+  --destructive-foreground: oklch(0.98 0.01 270);
+  --border: oklch(0.22 0.04 270);
+  --input: oklch(0.18 0.04 270);
+  --ring: oklch(0.65 0.25 285);
+  --chart-1: oklch(0.65 0.25 285);
+  --chart-2: oklch(0.55 0.22 160);
+  --chart-3: oklch(0.6 0.2 45);
+  --chart-4: oklch(0.5 0.18 320);
+  --chart-5: oklch(0.45 0.15 200);
+  --sidebar: oklch(0.1 0.02 270);
+  --sidebar-foreground: oklch(0.95 0.01 270);
+  --sidebar-primary: oklch(0.65 0.25 285);
+  --sidebar-primary-foreground: oklch(0.98 0.01 270);
+  --sidebar-accent: oklch(0.18 0.04 270);
+  --sidebar-accent-foreground: oklch(0.85 0.02 270);
+  --sidebar-border: oklch(0.22 0.04 270);
+  --sidebar-ring: oklch(0.65 0.25 285);
+}
+
+
+
+
+*, *::before, *::after {
+  border-color: var(--border);
+  outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+}
+body {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,0.12), transparent 10%),
+              radial-gradient(1000px 500px at 90% 90%, rgba(6,182,212,0.08), transparent 12%),
+              linear-gradient(180deg, rgba(7,16,41,1) 0%, rgba(4,10,24,1) 100%);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility: bright glass card */
+.glass-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+}
+
+/* Custom animations for argumentative */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(165, 120, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(165, 120, 255, 0.6);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}

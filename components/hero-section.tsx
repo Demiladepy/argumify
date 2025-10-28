@@ -47,7 +47,7 @@ export function HeroSection() {
 
           {/* Enhanced main heading with better typography */}
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-            <span className="block sm:inline">Shape the future of markets</span>{" "}
+            <span className="block sm:inline">Shape the future of markets </span>{" "}
             <span className="bg-clip-text text-transparent bg-linear-to-r from-primary to-accent animate-[fade-in_1s]">
               with Argumentative
             </span>
